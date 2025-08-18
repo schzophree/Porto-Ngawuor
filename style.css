@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    animation: earthquakeShake 0.5s infinite, colors 1s infinite;
+    animation: earthquakeShake 0.3s infinite, colors 0.3s infinite;
 }
 
 .font-pixel {
