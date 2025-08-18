@@ -13,7 +13,6 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- Audio Player Tersembunyi, dipindahkan ke sini -->
     <audio id="background-music" loop>
         <source src="horeg.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung elemen audio.
@@ -99,7 +98,7 @@
     </footer>
 
     <script>
-        // Kode untuk smooth scroll
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -109,22 +108,27 @@
             });
         });
 
-        // Skrip yang diperbaiki untuk memutar audio
+
         const audio = document.getElementById('background-music');
         
-        const playMusicOnFirstAction = () => {
-            audio.play().catch(error => {
-                console.log("Browser memblokir autoplay, menunggu interaksi.");
-            });
-            // Hapus listener setelah berhasil diputar agar tidak berjalan berulang kali
-            window.removeEventListener('scroll', playMusicOnFirstAction);
-            window.removeEventListener('click', playMusicOnFirstAction);
+        const tryPlayMusic = () => {
+            const promise = audio.play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+
+                    document.removeEventListener('click', tryPlayMusic);
+                    document.removeEventListener('scroll', tryPlayMusic);
+                    document.removeEventListener('touchstart', tryPlayMusic);
+                }).catch(error => {
+
+                    console.log("Autoplay dicegah. Menunggu interaksi pengguna yang valid.");
+                });
+            }
         };
 
-        // Coba putar saat scroll ATAU klik pertama
-        window.addEventListener('scroll', playMusicOnFirstAction, { once: true });
-        window.addEventListener('click', playMusicOnFirstAction, { once: true });
+        document.addEventListener('click', tryPlayMusic);
+        document.addEventListener('scroll', tryPlayMusic);
+        document.addEventListener('touchstart', tryPlayMusic);
     </script>
-
 </body>
 </html>
