@@ -1,83 +1,111 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <title>My Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Brief introduction of myself." />
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="#" class="logo shake-on-hover">MyPortfolio</a>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Zona EarthquakeShake</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold font-pixel text-gray-800">PORTFOLIO.ERR</a>
+            <div class="space-x-4">
+                <a href="#about" class="text-lg font-bold hover:text-purple-600 transition-colors">/about</a>
+                <a href="#projects" class="text-lg font-bold hover:text-purple-600 transition-colors">/projects</a>
+                <a href="#contact" class="text-lg font-bold hover:text-purple-600 transition-colors">/contact</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-      <section id="about" class="container">
-        <h2>About Me</h2>
-        <img src="img/sybau.jpg" width="150px" height="150px" alt="my pict" class="profile-picture shake-on-hover" />
-        <p>
-          I am <img src="img/my.jpg" alt="logo" width="132px" height="50px" />, a passionate mahastudent with experience in sleeping 2 hours, going to bed at 3 am then waking up at 5 am.
-          <strong>+ sybau ts pmo.</strong>
-        </p>
-        <audio controls loop>
-          <source src="horeg.mp3" type="audio/mpeg" />
-          Browser Anda tidak mendukung audio.
-        </audio>
-      </section>
+    <!-- HANYA ADA SATU TAG MAIN -->
+    <main class="pt-24">
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center bg-black/20">
+            <div class="p-8 rounded-lg">
+                <h1 class="text-5xl md:text-7xl font-bold text-white font-pixel title-shake">⚠️ PERINGATAN ⚠️</h1>
+                <p class="text-2xl md:text-4xl text-white mt-4 font-pixel">ANDA MEMASUKI ZONA `earthquakeShake`</p>
+            </div>
+        </section>
 
-      <section id="projects" class="container">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-          <article class="project-card shake-on-hover">
-            <a href="https://soundcloud.com/moonchi-music/garang-agek-dari-karrak-x-get-up-moonchi-edit" target="_blank">
-              <img src="img/kalimantan.jpg" alt="Screenshot portfolio" />
-              <h3>SYBAU!</h3>
-              <p>ts pmo, gooning. my song my song Garang Agek dari Karrak x Get Up Moonchi Edit</p>
-            </a>
-          </article>
+        <section id="about" class="container mx-auto py-20 px-6 text-center">
+            <h2 class="text-4xl md:text-4xl font-black">About Me</h2>
+            <img src="img/sybau.jpg" width="150px" height="150px" alt="my pict" class="profile-picture shake-on-hover" />
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">
+                I am <img src="img/my.jpg" alt="logo" width="132px" height="50px" class="inline-block align-middle mx-1" />, a passionate mahastudent with experience in sleeping 2 hours, going to bed at 3 am then waking up at 5 am.
+                <strong class="block mt-4 text-center">+ sybau ts pmo.</strong>
+            </p>
+            <audio controls loop class="mt-8 mx-auto">
+                <source src="horeg.mp3" type="audio/mpeg" />
+            </audio>
+        </section>
 
-          <article class="project-card shake-on-hover">
-            <a href="http://cuaca.bmkg.go.id/" target="_blank">
-              <img src="img/weath.jpg" alt="Screenshot weather app" />
-              <h3>Weather App</h3>
-              <p>meletop panas sejok same cuace</p>
-            </a>
-          </article>
+        <section id="projects" class="container mx-auto py-20 px-6">
+            <h2 class="text-center text-4xl md:text-4xl font-black">My Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <a href="https://on.soundcloud.com/6SUV31Epr22fRUYLNT" target="_blank">
+                        <img src="img/kalimantan.jpg" alt="Screenshot portfolio" />
+                        <h3 class="text-xl font-bold">SYBAU!</h3>
+                        <p>ts pmo, gooning. my song my song Garang Agek dari Karrak x Get Up Moonchi Edit</p>
+                    </a>
+                </article>
 
-          <article class="project-card shake-on-hover">
-            <a href="https://github.com/schzophree/Blob-Track-Lite-Schz" target="_blank">
-              <img src="img/myreact.jpg" alt="Screenshot Blob-Tracking (Offline)" />
-              <h3>Blob-Tracking (Offline)</h3>
-              <p>Project untuk melacak objek berdasarkan warna secara offline menggunakan library populer.</p>
-            </a>
-          </article>
-        </div>
-      </section>
+                <article class="project-card">
+                    <a href="http://cuaca.bmkg.go.id/" target="_blank">
+                        <img src="img/weath.jpg" alt="Screenshot weather app" />
+                        <h3 class="text-xl font-bold">Weather App</h3>
+                        <p>meletop panas sejok same cuace</p>
+                    </a>
+                </article>
 
-      <section id="contact" class="container">
-        <h2>Contact Me</h2>
-        <p>Jangan ragu untuk menghubungi saya untuk pertanyaan, kolaborasi, atau tido.</p>
-        <ul class="contact-list">
-          <li>
-            <a href="https://github.com/schzophree" target="_blank" class="shake-on-hover">
-              <img src="img/github.png" height="24px" width="24px" alt="GitHub icon" />
-              schzophree
-            </a>
-          </li>
-          </ul>
-      </section>
+                <article class="project-card">
+                    <a href="https://github.com/schzophree/Blob-Track-Lite-Schz" target="_blank">
+                        <img src="img/myreact.jpg" alt="Screenshot Blob-Tracking (Offline)" />
+                        <h3 class="text-xl font-bold">Blob-Tracking (Offline)</h3>
+                        <p>Project untuk melacak objek berdasarkan warna secara offline menggunakan library populer.</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container mx-auto py-20 px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-black">Contact Me</h2>
+            <p>Jangan ragu untuk menghubungi saya untuk pertanyaan, kolaborasi, atau tido.</p>
+            <ul class="contact-list">
+                <li>
+                    <a href="https://github.com/schzophree" target="_blank" class="shake-on-hover">
+                        <img src="img/github.png" height="24px" width="24px" alt="GitHub icon" />
+                        schzophree
+                    </a>
+                    <a href="https://instagram.com/moonchikuemochi" target="_blank" class="shake-on-hover">
+                        <img src="img/ig.png" height="24px" width="24px" alt="IG icon" />
+                        moonchikuemochi
+                    </a>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 My Portfolio Ngawur. All rights reserved.</p>
+        <p>&copy; 2025 My Portfolio Ngawur. All rights reserved.</p>
     </footer>
-  </body>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
 </html>
