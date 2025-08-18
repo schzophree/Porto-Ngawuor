@@ -108,23 +108,20 @@
             });
         });
 
-
         const audio = document.getElementById('background-music');
         
         const tryPlayMusic = () => {
             const promise = audio.play();
             if (promise !== undefined) {
                 promise.then(_ => {
-
                     document.removeEventListener('click', tryPlayMusic);
-                    document.removeEventListener('scroll', tryPlayMusic);
-                    document.removeEventListener('touchstart', tryPlayMusic);
-                }).catch(error => {
-
-                    console.log("Autoplay dicegah. Menunggu interaksi pengguna yang valid.");
-                });
-            }
-        };
+                        document.removeEventListener('scroll', tryPlayMusic);
+                        document.removeEventListener('touchstart', tryPlayMusic);
+                        }).catch(error => {
+                        console.log("Autoplay dicegah. Menunggu interaksi pengguna yang valid (seperti tap).");
+                        });
+                }
+        }
 
         document.addEventListener('click', tryPlayMusic);
         document.addEventListener('scroll', tryPlayMusic);
