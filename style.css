@@ -1,7 +1,6 @@
-/* Animasi global HANYA untuk body */
 body {
     font-family: 'Poppins', sans-serif;
-    animation: earthquakeShake 0.5s infinite, colors 0.2s infinite;
+    animation: earthquakeShake 0.5s infinite, colors 1s infinite;
 }
 
 .font-pixel {
@@ -25,30 +24,29 @@ section {
     border-radius: 50%;
     border: 4px solid #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 1.5rem auto; /* Menggunakan auto untuk center */
-    display: block; /* Agar margin auto bekerja */
+    margin: 1.5rem auto;
+    display: block;
 }
 
 h2 {
-    animation: amazingshake 0.5s infinite; /* MENAMBAHKAN GONCANGAN DI SINI */
+    animation: amazingshake 0.5s infinite;
 }
 
-/* Grid untuk proyek */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     text-align: left;
-    margin-top: 3rem; /* MENAMBAHKAN JARAK DI SINI */
+    margin-top: 3rem;
 }
 
 .project-card {
-    background: #ffffff; /* Latar belakang ini sekarang akan terlihat */
+    background: #ffffff; 
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: brutalshake 0.6s infinite; /* Kartu tetap berguncang sendiri */
+    animation: brutalshake 0.6s infinite; 
 }
 
 .project-card:hover {
@@ -78,7 +76,6 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* Daftar Kontak */
 .contact-list {
     list-style: none;
     display: flex;
@@ -104,45 +101,44 @@ footer {
     animation: brutalshake 0.5s infinite;
 }
 
-/* Keyframes tetap sama */
 @keyframes earthquakeShake {
-  0% { transform: translate(6px, 4px) rotate(2deg); }
-  10% { transform: translate(-4px, -6px) rotate(-2deg); }
-  20% { transform: translate(-8px, 0px) rotate(2deg); }
-  30% { transform: translate(8px, 6px) rotate(0deg); }
-  40% { transform: translate(4px, -4px) rotate(2deg); }
-  50% { transform: translate(-4px, 6px) rotate(-2deg); }
-  60% { transform: translate(-8px, 4px) rotate(0deg); }
-  70% { transform: translate(8px, 4px) rotate(-2deg); }
-  80% { transform: translate(-4px, -4px) rotate(2deg); }
-  90% { transform: translate(4px, 6px) rotate(0deg); }
-  100% { transform: translate(4px, -6px) rotate(-2deg); }
+  0% { transform: translate(3px, 2px) rotate(1deg); }
+  10% { transform: translate(-2px, -3px) rotate(-1deg); }
+  20% { transform: translate(-4px, 0px) rotate(1deg); }
+  30% { transform: translate(4px, 3px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(1deg); }
+  50% { transform: translate(-2px, 3px) rotate(-1deg); }
+  60% { transform: translate(-4px, 2px) rotate(0deg); }
+  70% { transform: translate(4px, 2px) rotate(-1deg); }
+  80% { transform: translate(-2px, -2px) rotate(1deg); }
+  90% { transform: translate(2px, 3px) rotate(0deg); }
+  100% { transform: translate(2px, -3px) rotate(-1deg); }
 }
 @keyframes brutalshake {
-  0% { transform: translate(3px, 3px) rotate(0deg); }
-  10% { transform: translate(-3px, -6px) rotate(-1deg); }
-  20% { transform: translate(-6px, 0px) rotate(1deg); }
-  30% { transform: translate(6px, 3px) rotate(0deg); }
-  40% { transform: translate(3px, -3px) rotate(1deg); }
-  50% { transform: translate(-3px, 6px) rotate(-1deg); }
-  60% { transform: translate(-6px, 3px) rotate(0deg); }
-  70% { transform: translate(6px, 3px) rotate(-1deg); }
-  80% { transform: translate(-3px, -3px) rotate(1deg); }
-  90% { transform: translate(3px, 6px) rotate(0deg); }
-  100% { transform: translate(3px, -6px) rotate(-1deg); }
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-0.5deg); }
+  20% { transform: translate(-2px, 0px) rotate(0.5deg); }
+  30% { transform: translate(2px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(0.5deg); }
+  50% { transform: translate(-1px, 2px) rotate(-0.5deg); }
+  60% { transform: translate(-2px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-0.5deg); }
+  80% { transform: translate(-1px, -1px) rotate(0.5deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-0.5deg); }
 }
 @keyframes amazingshake {
-  0% { transform: translate(4px, 4px) rotate(0deg); }
-  10% { transform: translate(-4px, -8px) rotate(-1deg); }
-  20% { transform: translate(-8px, 0px) rotate(1deg); }
-  30% { transform: translate(8px, 6px) rotate(0deg); }
-  40% { transform: translate(4px, -4px) rotate(1deg); }
-  50% { transform: translate(-4px, 8px) rotate(-1deg); }
-  60% { transform: translate(-8px, 4px) rotate(0deg); }
-  70% { transform: translate(8px, 4px) rotate(-1deg); }
-  80% { transform: translate(-4px, -4px) rotate(1deg); }
-  90% { transform: translate(4px, 8px) rotate(0deg); }
-  100% { transform: translate(4px, -8px) rotate(-1deg); }
+  0% { transform: translate(2px, 2px) rotate(0deg); }
+  10% { transform: translate(-2px, -4px) rotate(-0.5deg); }
+  20% { transform: translate(-4px, 0px) rotate(0.5deg); }
+  30% { transform: translate(4px, 3px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(0.5deg); }
+  50% { transform: translate(-2px, 4px) rotate(-0.5deg); }
+  60% { transform: translate(-4px, 2px) rotate(0deg); }
+  70% { transform: translate(4px, 2px) rotate(-0.5deg); }
+  80% { transform: translate(-2px, -2px) rotate(0.5deg); }
+  90% { transform: translate(2px, 4px) rotate(0deg); }
+  100% { transform: translate(2px, -4px) rotate(-0.5deg); }
 }
 @keyframes colors {
     0% { background-color: #e83838; }
@@ -156,4 +152,24 @@ footer {
     80% { background-color: #e233ee; }
     90% { background-color: #ef3aad; }
     100% { background-color: #f33d3d; }
+}
+
+
+@media (max-width: 640px) {
+    header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header nav > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    header nav > div > * + * {
+        margin-left: 0;
+    }
 }
