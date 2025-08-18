@@ -1,0 +1,226 @@
+/* --- 1. Impor Font & Reset Dasar --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* MENGAKTIFKAN KEMBALI ANIMASI GLOBAL */
+  animation: brutalshake 0.8s infinite, colors 0.5s infinite;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- 2. Penataan Layout Utama & Navigasi --- */
+.container {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  /* Guncangan untuk navigasi */
+  animation: brutalshake 0.5s infinite;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul a {
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul a:hover {
+  background-color: #eee;
+  color: #007bff;
+}
+
+main {
+  padding-top: 80px;
+}
+
+/* --- 3. Gaya Spesifik per Bagian --- */
+section {
+  text-align: center;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  /* Guncangan untuk judul */
+  animation: amazingshake 0.5s infinite;
+}
+
+/* Grid untuk proyek */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Guncangan untuk setiap kartu proyek */
+  animation: shake 0.6s infinite;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem 1.2rem;
+}
+
+.project-card p {
+  margin: 0 1.2rem 1.5rem 1.2rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Daftar Kontak */
+.contact-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    /* Guncangan untuk footer */
+    animation: brutalshake 0.4s infinite;
+}
+
+
+/* --- 4. KELAS INTERAKTIF (Masih bisa digunakan jika mau) --- */
+.shake-on-hover:hover {
+  animation: brutalshake 0.5s infinite;
+}
+
+/* --- 5. Definisi Keyframes Animasi --- */
+@keyframes brutalshake {
+  0% { transform: translate(2px, 2px) rotate(0deg); }
+  10% { transform: translate(-2px, -4px) rotate(-2deg); }
+  20% { transform: translate(-6px, 0px) rotate(2deg); }
+  30% { transform: translate(6px, 4px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(2deg); }
+  50% { transform: translate(-2px, 4px) rotate(-2deg); }
+  60% { transform: translate(-6px, 2px) rotate(0deg); }
+  70% { transform: translate(6px, 2px) rotate(-2deg); }
+  80% { transform: translate(-2px, -2px) rotate(2deg); }
+  90% { transform: translate(2px, 4px) rotate(0deg); }
+  100% { transform: translate(2px, -4px) rotate(-2deg); }
+}
+
+@keyframes amazingshake {
+  0% { transform: translate(4px, 4px) rotate(0deg); }
+  10% { transform: translate(-4px, -8px) rotate(-6deg); }
+  20% { transform: translate(-12px, 0px) rotate(6deg); }
+  30% { transform: translate(12px, 8px) rotate(0deg); }
+  40% { transform: translate(4px, -4px) rotate(6deg); }
+  50% { transform: translate(-4px, 8px) rotate(-6deg); }
+  60% { transform: translate(-12px, 4px) rotate(0deg); }
+  70% { transform: translate(12px, 4px) rotate(-6deg); }
+  80% { transform: translate(-4px, -4px) rotate(6deg); }
+  90% { transform: translate(4px, 8px) rotate(0deg); }
+  100% { transform: translate(4px, -8px) rotate(-6deg); }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* KEYFRAME UNTUK LATAR BELAKANG RGB */
+@keyframes colors {
+  0% { background-color: #e83838; }
+  10% { background-color: #ee9938; }
+  20% { background-color: #e7e139; }
+  30% { background-color: #64eb3a; }
+  40% { background-color: #3be858; }
+  50% { background-color: #38e0e6; }
+  60% { background-color: #34a7f5; }
+  70% { background-color: #9b38f1; }
+  80% { background-color: #e233ee; }
+  90% { background-color: #ef3aad; }
+  100% { background-color: #f33d3d; }
+}
