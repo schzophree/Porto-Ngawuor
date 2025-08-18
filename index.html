@@ -38,10 +38,8 @@
             <p class="text-lg md:text-xl max-w-3xl mx-auto">
                 I am <img src="img/my.jpg" alt="logo" width="132px" height="50px" class="inline-block align-middle mx-1" />, a passionate mahastudent with experience in sleeping 2 hours, going to bed at 3 am then waking up at 5 am.
                 <strong class="block mt-4 text-center">+ sybau ts pmo.</strong>
+                
             </p>
-            <audio controls loop class="mt-8 mx-auto">
-                <source src="horeg.mp3" type="audio/mpeg" />
-            </audio>
         </section>
 
         <section id="projects" class="container mx-auto py-20 px-6">
@@ -104,7 +102,23 @@
                 });
             });
         });
-    </script>
+// Play background music on first scroll, loop enabled
+        window.addEventListener('scroll', function playMusicOnScroll() {
+            const audio = document.getElementById('background-music');
+            if (audio && audio.paused) {
+            audio.loop = true;
+            audio.play().catch(() => {
+                // Autoplay might be blocked, ignore error
+            });
+            window.removeEventListener('scroll', playMusicOnScroll);
+            }
+        });
+        </script>
+        <!-- Hidden Background Audio Player -->
+        <audio id="background-music" loop style="display:none">
+        <source src="horeg.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+        </audio>
 
 </body>
 </html>
