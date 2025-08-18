@@ -13,6 +13,12 @@
 </head>
 <body class="text-gray-800">
 
+    <!-- Audio Player Tersembunyi, dipindahkan ke sini -->
+    <audio id="background-music" loop>
+        <source src="horeg.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
     <header class="bg-white/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold font-pixel text-gray-800">PORTFOLIO.ERR</a>
@@ -38,7 +44,6 @@
             <p class="text-lg md:text-xl max-w-3xl mx-auto">
                 I am <img src="img/my.jpg" alt="logo" width="132px" height="50px" class="inline-block align-middle mx-1" />, a passionate mahastudent with experience in sleeping 2 hours, going to bed at 3 am then waking up at 5 am.
                 <strong class="block mt-4 text-center">+ sybau ts pmo.</strong>
-                
             </p>
         </section>
 
@@ -94,6 +99,7 @@
     </footer>
 
     <script>
+        // Kode untuk smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -102,23 +108,23 @@
                 });
             });
         });
-// Play background music on first scroll, loop enabled
-        window.addEventListener('scroll', function playMusicOnScroll() {
-            const audio = document.getElementById('background-music');
-            if (audio && audio.paused) {
-            audio.loop = true;
-            audio.play().catch(() => {
-                // Autoplay might be blocked, ignore error
+
+        // Skrip yang diperbaiki untuk memutar audio
+        const audio = document.getElementById('background-music');
+        
+        const playMusicOnFirstAction = () => {
+            audio.play().catch(error => {
+                console.log("Browser memblokir autoplay, menunggu interaksi.");
             });
-            window.removeEventListener('scroll', playMusicOnScroll);
-            }
-        });
-        </script>
-        <!-- Hidden Background Audio Player -->
-        <audio id="background-music" loop style="display:none">
-        <source src="horeg.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung elemen audio.
-        </audio>
+            // Hapus listener setelah berhasil diputar agar tidak berjalan berulang kali
+            window.removeEventListener('scroll', playMusicOnFirstAction);
+            window.removeEventListener('click', playMusicOnFirstAction);
+        };
+
+        // Coba putar saat scroll ATAU klik pertama
+        window.addEventListener('scroll', playMusicOnFirstAction, { once: true });
+        window.addEventListener('click', playMusicOnFirstAction, { once: true });
+    </script>
 
 </body>
 </html>
