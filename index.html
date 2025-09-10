@@ -33,7 +33,7 @@
         <section id="hero" class="min-h-screen flex items-center justify-center text-center bg-black/20">
             <div class="p-8 rounded-lg">
                 <h1 class="text-5xl md:text-7xl font-bold text-white font-pixel title-shake">⚠️ PERINGATAN ⚠️</h1>
-                <p class="text-2xl md:text-4xl text-white mt-4 font-pixel">ANDA MEMASUKI ZONA `earthquakeShake`</p>
+                <p class="text-2xl md:text-4xl text-white mt-4 font-pixel">ANDA MEMASUKI ZONA EPILEPSI</p>
             </div>
         </section>
 
@@ -75,6 +75,17 @@
             </div>
         </section>
 
+        <section id="game" class="container mx-auto py-20 px-6 text-center">
+            <h2 class="text-center text-4xl md:text-4xl font-black">KLIK SI THOMAS ALVA EDISON!</h2>
+                <p class="mt-4 text-lg">Klik gambar secepatnya untuk dapat bansos!</p>
+                <div id="game-area" class="mt-8 w-full max-w-2xl h-96 bg-gray-200/50 mx-auto rounded-lg shadow-lg relative overflow-hidden card-shake">
+                    <img src="img/memethoreg.png" id="clickable-target" alt="Klik Aku!" class="absolute w-24 h-24 cursor-pointer" style="top: 50%; left: 50%;" draggable="false">
+                </div>
+             <div class="mt-6 text-2xl font-bold font-pixel">
+                Skor: <span id="score">0</span>
+            </div>
+        </section>
+
         <section id="contact" class="container mx-auto py-20 px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-black">Contact Me</h2>
             <p>Jangan ragu untuk menghubungi saya untuk pertanyaan, kolaborasi, atau tido.</p>
@@ -98,7 +109,7 @@
     </footer>
 
     <script>
-
+//jawascript
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -117,15 +128,53 @@
                     document.removeEventListener('click', tryPlayMusic);
                         document.removeEventListener('scroll', tryPlayMusic);
                         document.removeEventListener('touchstart', tryPlayMusic);
-                        }).catch(error => {
+                    }).catch(error => {
                         console.log("Autoplay dicegah. Menunggu interaksi pengguna yang valid (seperti tap).");
-                        });
+                    });
                 }
         }
 
         document.addEventListener('click', tryPlayMusic);
         document.addEventListener('scroll', tryPlayMusic);
         document.addEventListener('touchstart', tryPlayMusic);
+// gim
+
+        const gameArea = document.getElementById('game-area');
+        const target = document.getElementById('clickable-target');
+        const scoreDisplay = document.getElementById('score');
+
+        let score = 0;
+
+        function moveTarget() {
+            const areaWidth = gameArea.offsetWidth;
+            const areaHeight = gameArea.offsetHeight;
+            const targetWidth = target.offsetWidth;
+            const targetHeight = target.offsetHeight;
+
+            const randomTop = Math.random() * (areaHeight - targetHeight);
+            const randomLeft = Math.random() * (areaWidth - targetWidth);
+            
+            const randomRotate = (Math.random() - 0.5) * 90; 
+            
+            target.style.top = `${randomTop}px`;
+            target.style.left = `${randomLeft}px`;
+            target.style.transform = `translateZ(0) rotate(${randomRotate}deg)`;
+        }
+
+        target.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = score;
+
+            target.classList.add('hit-effect');
+
+            setTimeout(() => {
+                target.classList.remove('hit-effect');
+                
+                moveTarget();
+            }, 500);
+        });
+        setInterval(moveTarget, 500);
+        moveTarget();
     </script>
 </body>
 </html>
